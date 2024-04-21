@@ -1,13 +1,402 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/* Styles for main container */
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 20px;
+  margin: 100px;
+  padding: 80px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* Styles for chart container */
+.chart-container {
+  border: 1px solid black;
+}
+
+/* Styles for gauge container */
+.gauge-container {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column; /* Align items vertically */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  padding: 20px; /* Adjust padding for spacing */
+}
+
+/* Styles for vibration container */
+.vibration-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column; /* Set flex direction to column */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100%; /* Ensure container takes full height */
+}
+
+.vibration-container p {
+  font-size: 28px; /* Adjust font size for better visualization */
+  font-family: Algerian; /* Change font family for vibration text */
+  color: #FF4500; /* Change text color for vibration text */
+}
+
+
+/* Styles for login container */
+.login-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #4CAF50; /* Green border */
+  border-radius: 10px;
+  z-index: 1; /* Ensure the login container is above the background */
+}
+
+/* Styles for header */
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items at the start */
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto; /* Adjust height based on content */
+  z-index: 999;
+}
+
+/* Styles for logo */
+.logo{
+  left:20%;
+  height: 100px;
+  width: auto;
+  margin-right: 20px; /* Add margin to separate from the first line */
+}
+.logo-container {
+  position: absolute;
+  left: 23%; /* Adjust as needed */
+  top: 10%; /* Adjust as needed */
+}
+.content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content at the top */
+  position: absolute; /* Position the container absolutely */
+  top: 17%; /* Position at the top of the parent container */
+  left: 40%; /* Position it at the center */
+  transform: translateX(-50%); /* Adjust to center it perfectly */
+  align-items: center;
+}
+
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #05820a;
+  animation: fadeIn 2.5s ease; /* Add fade-in animation */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styles for h2 */
+h2 {
+  font-size: 24px;
+  color: #1dca31;
+}
+
+/* Keyframes for fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Styles for background video */
+#background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the video covers the entire container */
+  z-index: -1; /* Ensure the video stays behind other elements */
+}
+
+/* Styles for login content container */
+.login-content-container {
+  background-color: rgba(0, 0, 0, 0.8); /* Black background with some opacity */
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Styles for center alignment */
+.centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styles for login content */
+.login-content {
+  background-color: rgba(40, 208, 255, 0.8); /* Green background with some opacity */
+  padding: 50px;
+  border-radius: 11px;
+  z-index: 1;
+}
+
+/* Styles for login content h2 */
+.login-content h2 {
+  color: rgb(255, 255, 255); /* Change text color to white */
+}
+
+/* Styles for login content input */
+.login-content input {
+  margin-bottom: 10px;
+  width: 100%; /* Set input width to 100% */
+  padding: 10px; /* Add padding for better appearance */
+  border-radius: 5px; /* Add border-radius for rounded corners */
+}
+
+/* Styles for login content button */
+.login-content button {
+  background-color: #26ff00; /* Green */
+  border: none;
+  color: rgb(255, 255, 255);
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.top-box {
+  position: fixed; /* Fixed positioning */
+  top: 2%; /* Position at the top of the viewport */
+  right: 1%; /* Position at the right of the viewport */
+  width: 90%; /* 100% width minus 10% for padding */
+  background-color: #ffffff;
+  padding: 60px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #ccc; 
+  z-index: 999; /* Ensure the box stays on top of other content */
+}
+.logo-left,
+.logo-right {
+  position: absolute;
+  top: 0px; /* Adjust the top position as needed */
+  width: 20%; /* Adjust the width as needed */
+  height: 100%; /* Maintain aspect ratio */
+}
+
+.logo-left {
+  left: 0; 
+}
+.logo-right {
+  right: 0px; /* Position at the top right */
+}/* Animation for main page */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation to elements on the main page */
+.header, .content-container {
+  animation: fadeInDown 1s ease forwards;
+}
+
+/* Animation for login page */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply animation to elements on the login page */
+.login-container, .login-content {
+  animation: slideInLeft 1s ease forwards;
+}
+/* Animation for element coming from the left */
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for element coming from the right */
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Animation for element coming from the bottom */
+@keyframes slideInBottom {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+.gauge-container {
+  animation: slideInBottom 1s ease forwards;
+}
+
+.vibration-container {
+  animation: slideInLeft 1s ease forwards;
+}
+/* Animation for scaling up */
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Apply animation to all containers */
+.chart-container, .chart-container1 {
+  animation: scaleUp 1s ease forwards;
+}
+.motors-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+}
+
+.overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: rgb(214, 20, 20);
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.popup-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.box-container {
+  align-items: center;
+  text-align: center; 
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-container:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgb(224, 255, 25);
+}
+
+.motor-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #21ecff;
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.motor-button:hover {
+  background-color: #e1ff00;
+}
+.vibration-box {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 5px;
+}/* styles.css */
+
+.chart-heading {
+  font-family: Algerian, sans-serif; /* Use Algerian font */
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; /* Adjust color as needed */
+  text-align: center; /* Center align the heading */
+  margin-bottom: 10px;
+}
+.overlay1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white overlay */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999; /* Ensure the overlay is on top of other content */
+}
+
+.popup1 {
+  background-color: #ffffff; /* White background for popup */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Box shadow for popup */
+  text-align: center;
+  z-index: 1000; /* Ensure the popup is on top of the overlay */
+}
+
+.popup1 h2 {
+  margin-top: 0;
+  font-size: 24px;
+  color: #ff0000; /* Popup heading color */
+}
+
+.popup1 p {
+  font-size: 18px;
+  color: #ff0000; /* Popup text color */
 }

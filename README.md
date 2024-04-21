@@ -1,3 +1,7 @@
+# ABOUT THE PROJECT
+This project is basically a machine health monitoring system it monitors the health of the machine(ie motor) and if any abnormality is found it will send an alert message to the manager through whatsapp you and can add n no of motors in this app and monitor their health .
+# HOW THE PORJECT WORKS
+For this project i have used esp32 combined with 4 sensors that monitor the speed, temperature, vibration , current and i will post this data to an EMQX server where an MQTT is subscribed to an topic mqtt recieves those data as json packet and these data will recieved by the front end and display it in graphica manner and if any anomalies are found it will send the alert message through twilio to the subscribed whatsapp number and i have also implemented a  logic to store this logic in a mongodb database.
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +72,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###.
