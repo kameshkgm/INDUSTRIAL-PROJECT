@@ -5,8 +5,8 @@ const cors = require('cors');
 const app = express();
 const port = 3001;
 
-const accountSid = 'AC99738b833b74e6942583d3e13a24f416';
-const authToken = '5f8f23f66bd7a8c3bbda0fc323dc1098';
+const accountSid = 'youraccountsid';
+const authToken = 'yourauthtoken';
 const client = twilio(accountSid, authToken);
 
 let lastMessageSentTime = null;
@@ -24,8 +24,8 @@ app.post('/send-message', async (req, res) => {
             console.log('Sending message...');
             const message = await client.messages.create({
                 body: body,
-                from: 'whatsapp:+14155238886',
-                to: 'whatsapp:+917010103712'
+                from: 'whatsapp:"""number provide by twilio"""',
+                to: 'whatsapp:"reciever number"'
             });
             console.log('Message sent successfully:', message.sid);
             // Update last message sent time only if message is sent successfully
